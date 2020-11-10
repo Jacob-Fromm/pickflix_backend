@@ -37,11 +37,12 @@ end
 def get_all_actions
     action_genre_ids = "90176,77232,43048,1568,43040,2653,10673,1365,801362"
     action_page_num = 1
-
+    action_movies = []
     while action_page_num < 20
-        unogs_request(action_genre_ids, action_page_num)
+        action_movies.push(unogs_request(action_genre_ids, action_page_num))
         action_page_num += 1
     end
+    byebug
 end
 
 
@@ -76,6 +77,7 @@ def omdb_request(imdb_id, api_key)
     request = Net::HTTP::Get.new(url)
     response = http.request(request)
     readable_response = JSON.parse(response.read_body)
+    byebug
 end
 
 
@@ -112,6 +114,6 @@ def create_movie_objects(movie_hash)
     end
 end
 
-get_all_comedies
-get_all_horrors
+# get_all_comedies
+# get_all_horrors
 get_all_actions
