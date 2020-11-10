@@ -9,13 +9,13 @@ def get_all_films
     genre_ids_string = genres_request
     genre_ids_array = genres_request.split(", ")
     genre_array_for_strings = []
-    20.times do
-        genre_array_for_strings.push(genre_ids_array[rand(0..genre_ids_array.length)])
-    end
-    while page_num < 60
-        unogs_request(genre_array_for_strings.join(","), page_num)
-        page_num += 1
-    end
+    # 20.times do
+    #     genre_array_for_strings.push(genre_ids_array[rand(0..genre_ids_array.length)])
+    # end
+    # while page_num < 60
+    #     unogs_request(genre_array_for_strings.join(","), page_num)
+    #     page_num += 1
+    # end
     byebug
 end
 
